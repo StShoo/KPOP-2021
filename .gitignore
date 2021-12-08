@@ -1,0 +1,10 @@
+# Project exclude paths
+/Encyclopedia.js
+/InterfacePerson.js
+/InterfacePrizeLogger.js
+/InterfaceWorker.js
+/Lab1.js
+/Lab2.js
+/NewReferenceItem.js
+/ReferenceItem.js
+/UniversityLibrarian.js
