@@ -1,0 +1,21 @@
+<p>
+  <label>First: </label>
+  <input [(ngModel)]="first" (input)="CheckVariable()" placeholder="{{first}} id=" type="number">
+  <br>
+  <br>
+  <label>Second: </label>
+  <input [(ngModel)]="second" (input)="CheckVariable()" placeholder="{{second}} id=" type="number">
+  <br>
+  <br>
+  <label>Third: </label>
+  <input [(ngModel)]="third" (input)="CheckVariable()" placeholder="{{third}} id=" type="number">
+  <br>
+  <br>
+  <button *ngIf="is_variables_not_zero" (click)="count()"> Решить </button>
+</p>
+
+<label> First root: </label>
+<app-child [test]="[root_first]"></app-child>
+<br>
+<label> Second root: </label>
+<app-child [test]="[root_second]"></app-child>

@@ -1,0 +1,28 @@
+<button (click) = "Search()">GetAPI</button>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Login</th>
+    <th>Password</th>
+    <th>Cell</th>
+  </tr>
+
+  <tr *ngFor="let item of user"  (click)="openDialogs(item)"  >
+    <th>{{item.name}}</th>
+    <th>{{item.email}}</th>
+    <th>{{item.login}}</th>
+    <th>{{item.password}}</th>
+    <th>{{item.cell}}</th>
+    <button (click)="test(item)">Add to Favorite</button>
+  </tr>
+
+</table>
+
+
+<h1>FAVORITE USERS</h1>
+<div *ngIf="favorite[0] != null ">
+  {{favorite | json}}
+
+</div>

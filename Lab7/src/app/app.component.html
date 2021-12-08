@@ -1,0 +1,79 @@
+
+<form [formGroup]="NewForm">
+  <div class="container">
+    <h1 class="text-color">Регистрация</h1>
+    <hr class="text-color">
+    <h2 class="text-color">Введите ваше имя:</h2>
+
+    <label> <b class="text-color">First name </b></label>
+    <input type="text" placeholder="Enter First name" id="firstname" required autocomplete="off"
+           formControlName="Firstanme">
+    <div *ngIf="FirstName_.invalid && FirstName_.touched"
+         class="alert-danger" >
+      <div *ngIf="FirsNameErrors()" >
+        {{FirsNameErrors()}}
+      </div>
+    </div>
+
+
+    <label ><b class="text-color">Last Name</b></label>
+    <input type="text" placeholder="Enter Last Name" id="LastName" required autocomplete="off"
+           formControlName="Lastname">
+    <div *ngIf="LastName.invalid && LastName.touched"
+         class="alert-danger" >
+      <div *ngIf="LastNameErrors()" >
+        {{LastNameErrors()}}
+      </div>
+    </div>
+
+    <hr>
+    <h2 class="text-color">Введите данные пользователя:</h2>
+
+    <label> <b class="text-color">UserLogin</b></label>
+    <input type="text" placeholder="Enter Login" name="login" id="login" required autocomplete="off"
+           formControlName="Login">
+    <div *ngIf="Login.invalid && (Login.dirty || Login.touched)"
+         class="alert-danger">
+      <div *ngIf="LoginErrors()">
+        {{LoginErrors()}}
+      </div>
+    </div>
+
+    <label for="psw"><b class="text-color">Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" id="psw" required autocomplete="off"
+           formControlName="password">
+    <div *ngIf="password.invalid && (password.dirty || password.touched)"
+         class="alert-danger">
+      <div *ngIf="PasswordErrors()">
+        <p> {{PasswordErrors()}}</p>
+      </div>
+    </div>
+
+    <hr>
+    <h2 class="text-color">Введите ваши контактные данные:</h2>
+
+    <label><b class="text-color">Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" id="email" required autocomplete="off"
+           formControlName="email">
+    <div *ngIf="email.invalid && email.touched"
+         class="alert-danger" >
+      <div *ngIf="EmailErrors()" >
+        {{EmailErrors()}}
+      </div>
+    </div>
+
+
+    <label><b class="text-color">Phone</b></label>
+    <input type="text" placeholder="Enter Phone" name="email" id="phone" required autocomplete="off"
+           formControlName="Phone">
+    <div *ngIf="Phone.invalid && Phone.touched"
+         class="alert-danger" >
+      <div *ngIf="PhoneErrors_()" >
+        {{PhoneErrors_()}}
+      </div>
+    </div>
+
+    <button [disabled]="NewForm.invalid" class="registerbtn" id="submit-button" mat-button color="primary" (click)="ButtonRegister()">
+      Зарегестрироваться</button>
+  </div>
+</form>
